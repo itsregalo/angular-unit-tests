@@ -1,21 +1,17 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { FirstTestComponent } from "./first-test.component";
 
-import { FirstTestComponent } from './first-test.component';
-
-describe('FirstTestComponent', () => {
+describe("First Test", ()=>{
   let component: FirstTestComponent;
-  let fixture: ComponentFixture<FirstTestComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [FirstTestComponent]
-    });
-    fixture = TestBed.createComponent(FirstTestComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+  beforeEach(()=>{
+      component = new FirstTestComponent();
+    })
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-});
+  it("Should create", ()=>{
+      expect(component).toBeTruthy();
+  })
+
+  it("Check the right Title",()=>{
+      expect(component.title).toEqual("First Test Component");
+  })
+})
